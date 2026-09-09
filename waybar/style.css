@@ -1,0 +1,178 @@
+* {
+    font-family: "Iosevka NFP";
+    font-weight: bold;
+    font-size: 15px;
+    text-shadow: none;
+    transition: none;
+    box-shadow: none;
+}
+
+#waybar {
+    background: transparent;
+    color: #ebdbb2;
+    margin: 0;
+    padding: 0 0px;
+    min-height: 0;
+}
+
+#custom-launcher,
+#custom-terminal,
+#custom-codium,
+#custom-brave,
+#custom-spotify,
+#mpris,
+#clock,
+#workspaces,
+#pulseaudio,
+#tray,
+#network,
+#memory,
+#backlight,
+#battery {
+    background-color: #1d2021;
+    color: #ebdbb2;
+    padding: 4px 7px;
+    margin: 0;
+}
+
+#custom-launcher,
+#custom-terminal,
+#custom-codium,
+#custom-brave,
+#custom-spotify {
+    font-size: 17px;
+}
+
+/* Left */
+
+.modules-left {
+    background-color: #1d2021;
+    padding: 5px 7px;
+    margin: 0;
+}
+
+#custom-launcher {
+    background-color: #ea6962;
+    color: #1d2021;
+    border: solid 2px #e3433b;
+}
+
+#custom-terminal {
+    border: solid 2px #7daea3;
+}
+
+#custom-codium {
+    border: solid 2px #a9b665;
+}
+
+#custom-brave {
+    border: solid 2px #d8a657;
+}
+
+#custom-spotify {
+    border: solid 2px #a9b665;
+}
+
+#mpris {
+    background-color: #1d2021;
+    border: solid 2px #a9b665;
+    color: #ebdbb2;
+    padding: 4px 7px;
+}
+
+/* Center */
+
+.modules-center {
+    background-color: #1d2021;
+    padding: 5px 7px;
+    margin: 0;
+}
+
+#clock {
+    border: solid 2px #ea6962;
+    color: #ebdbb2;
+}
+
+#workspaces {
+    padding: 0;
+    margin-left: 5px;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    margin: 0 2px;
+    border: solid 2px #7daea3;
+    background-color: transparent;
+    color: #7daea3;
+    border-radius: 0;
+}
+
+#workspaces button:hover {
+    background-color: #1d2021;
+    color: #ebdbb2;
+}
+
+#workspaces button.active {
+    color: #ea6962;
+    border-color: #ea6962;
+}
+
+#workspaces button.urgent {
+    background-color: #ea6962;
+    color: #fbf1c7;
+}
+
+/* Right */
+
+.modules-right {
+    background-color: #1d2021;
+    padding: 5px 7px;
+    margin: 0;
+}
+
+#pulseaudio {
+    border: solid 2px #7daea3;
+}
+
+#tray {
+    border: solid 2px #a9b665;
+}
+
+#network {
+    border: solid 2px #d8a657;
+}
+
+#memory {
+    border: solid 2px #e78a4e;
+}
+
+#backlight {
+    border: solid 2px #a9b665;
+}
+
+#battery {
+    border: solid 2px #d3869b;
+}
+
+#battery.charging,
+#battery.plugged {
+    background-color: #1d2021;
+    color: #ebdbb2;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #ea6962;
+    color: #ebdbb2;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #fbf1c7;
+        color: #1d2021;
+    }
+}

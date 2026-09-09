@@ -1,0 +1,171 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 20,
+    "spacing": 5,
+    "on-sigusr1": "hide",
+	"on-sigusr2": "show",
+    "margin-left": 5,
+    "margin-right": 5,
+    "margin-top": 5,
+
+    "modules-left": [
+        "custom/launcher",
+        "custom/terminal",
+        "custom/codium",
+        "custom/brave",
+        "custom/spotify",
+        "mpris"
+    ],
+
+    "modules-center": [
+        "clock",
+        "hyprland/workspaces"
+    ],
+
+    "modules-right": [
+        "pulseaudio",
+        "tray",
+        "network",
+        "memory",
+        "backlight",
+        "battery"
+    ],
+
+    "custom/launcher": {
+        "format": "",
+        "tooltip": "Applications",
+        "on-click": "rofi -show drun",
+        "on-click-right": "pkill rofi"
+    },
+
+    "custom/terminal": {
+        "format": "",
+        "tooltip": "Terminal",
+        "on-click": "kitty"
+    },
+
+    "custom/codium": {
+        "format": "󰨞",
+        "tooltip": "VSCodium",
+        "on-click": "codium"
+    },
+
+    "custom/brave": {
+        "format": "󰖟",
+        "tooltip": "Brave",
+        "on-click": "brave"
+    },
+
+    "custom/spotify": {
+        "format": "",
+        "tooltip": "Spotify",
+        "on-click": "spotify"
+    },
+
+    "mpris": {
+        "interval": 1,
+        "format": "{artist} 󰎆 {title}",
+        "format-disconnected": "  Spotify",
+        "format-stopped": "  Spotify",
+        "ellipsis": "…",
+        "title-len": 30,
+        "on-click": "spotify"
+    },
+
+    "clock": {
+        "tooltip-format": "󰥔 <big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "<span color='#ea6962'>󰥔 </span>{:%a %d | %I:%M:%S %p}",
+        "interval": 1
+    },
+
+    "hyprland/workspaces": {
+        "sort-by": "number",
+        "all-outputs": false,
+        "format": "{name}",
+        "persistent-workspaces": {
+            "*": 4
+        }
+    },
+
+    "pulseaudio": {
+        "format": "<span color='#7daea3'>{icon}</span>  {volume}%",
+        "format-muted": "󰝟  {volume}%",
+        "format-bluetooth": "<span color='#7daea3'>{icon}</span> {volume}%",
+        "format-bluetooth-muted": "<span color='#ea6962'>󰂲 </span>{volume}%",
+        "format-source-muted": "󰝟 ",
+        "format-icons": {
+            "headphone": "",
+            "headset": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "tray": {
+        "icon-size": 17,
+        "spacing": 10
+    },
+
+    "network": {
+        "format-wifi": "<span color='#D8A657'>{icon}</span> {essid}",
+        "format-ethernet": "<span color='#D8A657'>󰈀</span> {ipaddr}",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "interval": 5,
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ]
+    },
+
+    "memory": {
+        "format": "<span font_size='12pt' color='#E78A4E'>󰍛</span> {used:0.2f} GB",
+        "interval": 1
+    },
+
+    "backlight": {
+        "format": "<span color='#a9b665'>{icon}</span> {percent}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 20
+        },
+        "events": {
+            "on-discharging-warning": "notify-send -u critical 'Low Battery'"
+        },
+        "format": "<span color='#D3869B'>{icon}</span> {capacity}%",
+        "format-full": "<span color='#d3869b'>{icon}</span> {capacity}%",
+        "format-charging": "<span color='#d3869b'> </span>{capacity}%",
+        "format-plugged": "<span color='#d3869b'></span>{capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "interval": 1
+    }
+}
