@@ -1,0 +1,179 @@
+configuration {
+    modi: "drun,run,window";
+    show-icons: true;
+
+    font: "JetBrains Mono Bold 12";
+
+    display-drun: "Apps";
+    display-run: "Run";
+    display-window: "Windows";
+}
+
+* {
+    background: #1d2021;
+    foreground: #ebdbb2;
+    text-color: #ebdbb2;
+
+    lightbg: #1d2021;
+    lightfg: #ebdbb2;
+
+    blue: #7daea3;
+}
+
+/* Main window */
+
+window {
+    width: 700px;
+
+    background-color: #1d2021;
+
+    border: 1px;
+    border-color: #7daea3;
+    border-radius: 0px;
+
+    padding: 12px;
+}
+
+/* Main layout */
+
+mainbox {
+    background-color: #1d2021;
+
+    children: [
+        inputbar,
+        listview
+    ];
+
+    spacing: 10px;
+}
+
+/* Search box */
+
+inputbar {
+    background-color: #1d2021;
+
+    border: 1px;
+    border-color: #7daea3;
+    border-radius: 0px;
+
+    padding: 6px;
+
+    children: [
+        prompt,
+        entry
+    ];
+}
+
+prompt {
+    background-color: transparent;
+    text-color: #7daea3;
+
+    padding: 0px 6px 0px 0px;
+
+    vertical-align: 0.5;
+}
+
+entry {
+    background-color: transparent;
+    text-color: #ebdbb2;
+
+    placeholder: "Search...";
+    placeholder-color: #928374;
+
+    vertical-align: 0.5;
+}
+
+/* Application list */
+
+listview {
+    background-color: transparent;
+
+    columns: 1;
+    lines: 8;
+
+    spacing: 2px;
+
+    scrollbar: false;
+}
+
+/* Application elements */
+
+element {
+    background-color: #1d2021;
+    text-color: #ebdbb2;
+
+    padding: 8px 6px;
+
+    border: 1px;
+    border-color: transparent;
+    border-radius: 0px;
+
+    children: [
+        element-icon,
+        element-text
+    ];
+}
+
+/* Alternate applications */
+
+element alternate,
+element alternate.normal,
+element alternate.active,
+element alternate.urgent {
+    background-color: #1d2021;
+    text-color: #ebdbb2;
+    border-color: transparent;
+}
+
+/* Selected application */
+
+element selected,
+element selected.normal,
+element selected.active,
+element selected.urgent {
+    background-color: #3c3836;
+
+    border: 1px;
+    border-color: #7daea3;
+    border-radius: 0px;
+
+    text-color: #ebdbb2;
+}
+
+/* Application text */
+
+element-text {
+    background-color: transparent;
+    text-color: #ebdbb2;
+
+    vertical-align: 0.5;
+}
+
+/* Application icons */
+
+element-icon {
+    background-color: transparent;
+
+    size: 30px;
+
+    padding: 0px 10px 0px 0px;
+
+    vertical-align: 0.5;
+}
+
+/* Selected text */
+
+element selected element-text {
+    background-color: transparent;
+    text-color: #7daea3;
+
+    vertical-align: 0.5;
+}
+
+/* Selected icon */
+
+element selected element-icon {
+    background-color: transparent;
+
+    vertical-align: 0.5;
+}
